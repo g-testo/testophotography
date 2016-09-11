@@ -6,8 +6,11 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/view', function(req, res, next) {
-  res.send('user view');
+router.get('/create', function(req, res, next) {
+  var vm = {
+    title: 'Create an account'
+  };
+  res.render('users/create', vm);
 });
 
 module.exports = router;
