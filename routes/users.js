@@ -25,19 +25,23 @@ router.post('/create', function(req, res, next) {
         title: 'Create an account',
         input: req.body,
         error: err
-      };
+    };
       delete vm.input.password;
       return res.render('users/create', vm);
     }
     req.login(req.body, function(err) {
-      res.redirect('/orders');
+    if (err) {
+      console.log(err);
+    }
+    res.redirect('/');
     });
   });
 });
 
-router.post('/login', 
-  function(req, res, next) {
-    req.session.orderId = 12345;
+router.post('/login', function(req, res, next) {
+  
+  
+  
     if (req.body.rememberMe) {
       req.session.cookie.maxAge = config.cookieMaxAge;
     }
@@ -45,7 +49,7 @@ router.post('/login',
   },
   passport.authenticate('local', {
     failureRedirect: '/', 
-    successRedirect: '/orders',
+    successRedirect: '/',
     failureFlash: 'Invalid credentials'
   }));
 
