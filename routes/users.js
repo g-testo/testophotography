@@ -38,14 +38,21 @@ router.post('/create', function(req, res, next) {
   });
 });
 
+
+router.get('/login', function(req, res, next) {
+    var vm = {
+        title: 'Login',
+        error: req.flash('error')
+    };
+  res.render('users/login', vm);
+});
+
+
 router.post('/login', function(req, res, next) {
-  
-  
-  
-    if (req.body.rememberMe) {
-      req.session.cookie.maxAge = config.cookieMaxAge;
-    }
-    next();
+  if (req.body.rememberMe) {
+    req.session.cookie.maxAge = config.cookieMaxAge;
+  }
+  next();
   },
   passport.authenticate('local', {
     failureRedirect: '/', 
