@@ -38,7 +38,6 @@ router.post('/create', function(req, res, next) {
   });
 });
 
-
 router.get('/login', function(req, res, next) {
     var vm = {
         title: 'Login',
@@ -47,18 +46,17 @@ router.get('/login', function(req, res, next) {
   res.render('users/login', vm);
 });
 
-
 router.post('/login', function(req, res, next) {
-  if (req.body.rememberMe) {
-    req.session.cookie.maxAge = config.cookieMaxAge;
-  }
-  next();
+    if (req.body.rememberMe) {
+      req.session.cookie.maxAge = config.cookieMaxAge;
+    }
+    next();
   },
   passport.authenticate('local', {
     failureRedirect: '/', 
     successRedirect: '/',
     failureFlash: 'Invalid credentials'
-  }));
+}));
 
 router.get('/logout', function(req, res, next) {
   req.logout();

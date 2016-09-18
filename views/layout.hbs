@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <link rel='stylesheet' href='/stylesheets/style.css' type='text/css' media='all' />
-        <script type='text/javascript' src='/js/jquery.js'></script>
-        <script type='text/javascript' src="/js/main.js"></script>
-    </head>
-    <body>
-	        <header>
-            </header>
-            {{#if firstName}}
-                <div id="greeting" style="float:right">
-                    <strong>Hi, {{firstName}}!</strong>
-                    <a href="/users/logout">Log out</a>
-                </div>
-            {{/if}}
-	       {{{body}}}
-	        <footer>
-	        </footer>
-    </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel='stylesheet' href='/stylesheets/user_forms.css' type='text/css' media='all' />
+  <script type='text/javascript' src='/js/jquery.js'></script>
+  <script type='text/javascript' src="/js/main.js"></script>
+</head>
+
+<body>
+  
+  <header>
+    <div class="nav_wrapper">
+      <div class="nav_body">
+        <ul class="nav_menu_items">
+          <li>Artwork</li>
+            <li>1x4</li>
+            <li>2x2</li>
+            <li>4x2</li>
+            <li>Custom</li>
+          <li>About Us</li>
+            <li>History</li>
+            <li>Quality</li>
+          <li class="icon"></li>
+            <a href="javascript:void(0);" 
+          onclick="myFunction()">&#9776;</a>
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+  {{#if firstName}}
+  <div id="greeting" style="float:right">
+    <strong>Hi, {{firstName}}!</strong>
+    <a href="/users/logout">Log out</a>
+  </div>
+  {{/if}} 
+
+  {{{body}}}
+  
+  <footer>
+  </footer>
+  
+</body>
+
 </html>
