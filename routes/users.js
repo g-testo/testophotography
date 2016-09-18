@@ -53,7 +53,7 @@ router.post('/login', function(req, res, next) {
     next();
   },
   passport.authenticate('local', {
-    failureRedirect: '/', 
+    failureRedirect: '/users/login', 
     successRedirect: '/',
     failureFlash: 'Invalid credentials'
 }));

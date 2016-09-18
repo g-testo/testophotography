@@ -1,4 +1,6 @@
 var express = require('express');
+var sass = require('node-sass');
+var sassMiddleware = require('node-sass-middleware');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -15,12 +17,22 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var passportConfig = require('./auth/passport-config');
-var restrict = require('./auth/restrict');
+// var restrict = require('./auth/restrict');
 passportConfig();
 
 mongoose.connect(config.mongoUri);
 
 var app = express();
+
+app.use(sassMiddleware({
+  src: __dirname + '/sass',
+  dest: __dirname + '/public/stylesheets',
+  debug: true,
+  outputStyle: 'compressed',
+  prefix:  '/stylesheets'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+})),
+  
+app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,11 +42,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressSession(
     {
-        secret: 'getting hungry',
+        secret: 'whatever',
         saveUninitialized: false,
         resave: false,
         store: new MongoStore({
