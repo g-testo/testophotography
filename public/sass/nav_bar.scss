@@ -1,0 +1,100 @@
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.md-sidenav-left {
+    background-color: #111;
+    transition: 0.5s;
+    padding-top: 60px;
+    .md-button{
+      margin:10px;
+	    padding:30px 10px;
+    }
+}
+
+.md-sidenav-left a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    transition: 0.3s
+}
+
+.md-sidenav-left a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.md-sidenav-left .closebtn {
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .md-sidenav-left {padding-top: 15px;}
+  .md-sidenav-left a {font-size: 18px;}
+}
+
+
+
+
+
+// .nav_wrapper{
+//     margin: 0;
+//     padding: 0;
+// }
+
+// ul.nav_menu_items {
+//     list-style-type: none;
+//     overflow: hidden;
+//     background-color: #333;
+//     margin: 0;
+//     padding: 0;
+//     li {
+//         float: left;
+//         a {
+//             display: inline-block;
+//             color: #f2f2f2;
+//             text-align: center;
+//             padding: 14px 16px;
+//             text-decoration: none;
+//             transition: 0.3s;
+//             font-size: 17px;
+//         }
+//     }
+// }
+// ul.nav_menu_items li a:hover {background-color: #555;}
+
+// ul.nav_menu_items li.icon {display: none;}
+
+// @media screen and (max-width:500px) {
+//   ul.nav_menu_items li:not(:first-child) {display: none;}
+//   ul.nav_menu_items li.icon {
+//     float: right;
+//     display: inline-block;
+//   }
+// }
+
+// @media screen and (max-width:500px) {
+//   ul.nav_menu_items.responsive {position: relative;}
+//   ul.nav_menu_items.responsive li.icon {
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//   }
+//   ul.nav_menu_items.responsive li {
+//     float: none;
+//     display: inline;
+//   }
+//   ul.nav_menu_items.responsive li a {
+//     display: block;
+//     text-align: left;
+//   }
+// }

@@ -4,13 +4,13 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     if (req.user) {
-        return res.render('index');
+        return res.render('layout');
     }
     var vm = {
         title: 'Home page',
         error: req.flash('error')
     };
-  res.render('index', vm);
+  res.render('layout', vm);
 });
 
 module.exports = router;

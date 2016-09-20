@@ -25,7 +25,7 @@ mongoose.connect(config.mongoUri);
 var app = express();
 
 app.use(sassMiddleware({
-  src: __dirname + '/sass',
+  src: __dirname + '/public/sass',
   dest: __dirname + '/public/stylesheets',
   debug: true,
   outputStyle: 'compressed',
@@ -36,7 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
