@@ -9,14 +9,11 @@ app.config(function ($routeProvider) {
     .when('/artwork', {
         templateUrl:"pages/artwork_index.html",
     })
-    .when('/1x4', {
-        templateUrl:"pages/artwork/artwork_1x4.html",
-    })
-    .when('/2x2', {
-        templateUrl:"pages/artwork/artwork_2x2.html",
-    })
     .when('/2x4', {
         templateUrl:"pages/artwork/artwork_2x4.html",
+    })
+        .when('/2x6', {
+        templateUrl:"pages/artwork/artwork_2x6.html",
     })
     .when('/custom', {
         templateUrl:"pages/artwork/artwork_custom.html",
