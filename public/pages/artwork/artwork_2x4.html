@@ -1,6 +1,7 @@
 artwork_2x4
-<img ng-src="images/2x4/bridge_boat.jpg" alt="Description" />
-<img ng-src="images/2x4/glow_nyc.jpg" alt="Description" />
-<img ng-src="images/2x4/hellgate_bridge.jpg" alt="Description" />
-<img ng-src="images/2x4/nyc_cityscape.jpg" alt="Description" />
-<img ng-src="images/2x4/nyc_night.jpg" alt="Description" />
+
+<div ng-controller="MainCtrl">
+    <div class="container slider">
+        <img ng-repeat="slide in slides" class="slide" ng-src="{{slide.image}}">
+    </div>
+</div>

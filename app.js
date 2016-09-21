@@ -14,7 +14,7 @@ var MongoStore = connectMongo(expressSession);
 
 var config = require('./config');
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 
 var passportConfig = require('./auth/passport-config');
 // var restrict = require('./auth/restrict');
@@ -59,7 +59,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routes);
-app.use('/users', users);
+
+// angular routing refreshing issue fix after removing # 
+app.use(function(req, res) {
+    res.sendfile(__dirname + '/views/layout.html');
+});
+
+// app.use('/users', users);
 //app.use(restrict);
 
 // catch 404 and forward to error handler
