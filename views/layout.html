@@ -4,57 +4,48 @@
 <head>
   <meta charset="UTF-8" />
   <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" , href="/stylesheets/nav_bar.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+  <link rel="stylesheet" , href="/stylesheets/artwork.css" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
   <div id="sideNavContainer" ng-controller="sideNavController as ctrl" layout="row" ng-cloak>
 
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-
       <md-list>
         <md-list-item>
           <md-button ng-href="/" ng-click="closeSideNavPanel()">Home</md-button>
         </md-list-item>
-
         <md-list-item>
           <md-button ng-href="artwork" ng-click="closeSideNavPanel()">Artwork</md-button>
         </md-list-item>
-
-
         <md-list-item>
           <md-button ng-href="about" ng-click="closeSideNavPanel()">About Us</md-button>
         </md-list-item>
-
       </md-list>
-
     </md-sidenav>
-
     <md-content>
       <md-button class="menu_button" ng-click="openLeftMenu()">Open Menu</md-button>
     </md-content>
-
   </div>
 
   <div>
     <ng-view></ng-view>
   </div>
 
-  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/js/home.js"></script>
   <script type='text/javascript' src='/js/angular.js'></script>
 
 </body>

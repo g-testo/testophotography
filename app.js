@@ -39,7 +39,7 @@ app.use('/', routes);
 
 // angular routing refreshing issue fix after removing # 
 app.use(function(req, res) {
-    res.sendfile(__dirname + '/views/layout.html');
+    res.sendFile(__dirname + '/views/layout.html');
 });
 
 // catch 404 and forward to error handler
