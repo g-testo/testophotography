@@ -5,12 +5,12 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
-var config = require('./config');
+// var config = require('./config');
 var routes = require('./routes/index');
 
-mongoose.connect(config.mongoUri);
+// mongoose.connect(config.mongoUri);
 
 var app = express();
 
