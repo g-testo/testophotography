@@ -6,12 +6,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // var mongoose = require('mongoose');
-
-// var config = require('./config');
+// require('bootstrap');
 var routes = require('./routes/index');
-
-// mongoose.connect(config.mongoUri);
-
 var app = express();
 
 app.use(sassMiddleware({
@@ -41,6 +37,7 @@ app.use('/', routes);
 app.use(function(req, res) {
     res.sendFile(__dirname + '/views/layout.html');
 });
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
