@@ -1,3 +1,4 @@
+"use strict";
 var app = angular.module("app", ['ngRoute', 'ngMaterial', 'ngAnimate']);
 
 app.config(function($routeProvider, $locationProvider) {
@@ -22,7 +23,7 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: "pages/about_us.html",
         })
         .otherwise({
-            redirectTo: '#/'
+            redirectTo: '/'
         });
 
     // use the HTML5 History API for removing the # in angular
@@ -44,7 +45,7 @@ function sideNavController($scope, $mdSidenav) {
 }
 
 app.controller('MainCtrl', function($scope) {
-        $scope.slides = [{
+        $scope.photos = [{
             image: 'images/2x4/bridge_boat.jpg',
             description: 'Image 00'
         }, {
