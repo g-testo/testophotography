@@ -2,7 +2,7 @@ md-content{
 	width: 100%;
 	button{
     	width: 98%;
-    	height: 200px;
+    	height: 100px;
 	}
 }
 
@@ -10,11 +10,11 @@ md-content{
     background-color: #111;
     transition: 0.5s;
     padding-top: 60px;
-    max-width:450px;
-	min-width:600px;
+    max-width:250px;
+	min-width:300px;
     .md-button{
         margin:auto;
-	    padding:100px 220px
+	    padding:50px 110px
     }
 }
 .md-sidenav-left a {
