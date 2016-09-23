@@ -33,6 +33,14 @@ app.config(function($routeProvider, $locationProvider) {
     });
 });
 
+//Back button only shows when on certain pages
+app.run(function($rootScope, $location) {
+  $rootScope.$on('$routeChangeSuccess', function() {
+      $rootScope.backRoute = ['/2x4', '/2x6', '/custom'].indexOf($location.path()) > -1;
+  });
+});
+
+
 app.controller('sideNavController', sideNavController);
 
 function sideNavController($scope, $mdSidenav) {
