@@ -1,45 +1,46 @@
-<!--artwork_2x4-->
-
-<div class="swiper-container gallery-top">
+<span class="artwork_title">Canvas 2x4</span>
+    
+    
+<div class="swiper-container gallery-top2x4">
     <div class="swiper-wrapper top_wrapper">
-        <div class="swiper-slide"> <img ng-src="images/2x4/bridge_boat.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/glow_nyc.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/hellgate_bridge.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_cityscape.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_night.jpg"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/bridge_boat.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/glow_nyc.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/hellgate_bridge.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_cityscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_night.jpg" class="swiper-lazy"></div>
     </div>
     
-    <div class="swiper-button-next swiper-button-white"></div>
-    <div class="swiper-button-prev swiper-button-white"></div>
-</div>
-<div class="swiper-container gallery-thumbs">
-    <div class="swiper-wrapper thumb_wrapper">
-        <div class="swiper-slide"> <img ng-src="images/2x4/bridge_boat.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/glow_nyc.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/hellgate_bridge.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_cityscape.jpg"></div>
-        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_night.jpg"></div>
-    </div
+    <div class="swiper-button-next swiper-button-black"></div>
+    <div class="swiper-button-prev swiper-button-black"></div>
 </div>
 
-<!--<div class="container swiper-slide">-->
-<!--    <img ng-repeat="photo in photos" class="photo" ng-src="{{photo.image}}"-->
-<!--</div>-->
+<div class="swiper-container gallery-thumbs2x4">
+    <div class="swiper-wrapper thumb_wrapper">
+        <div class="swiper-slide"> <img ng-src="images/2x4/bridge_boat.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/glow_nyc.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/hellgate_bridge.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_cityscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/2x4/nyc_night.jpg" class="swiper-lazy"></div>
+    </div
+</div>
             
 <script>
-    var galleryTop = new Swiper('.gallery-top', {
+    var galleryTop2x4 = new Swiper('.gallery-top2x4', {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 10,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true
     });
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
+    var galleryThumbs2x4 = new Swiper('.gallery-thumbs2x4', {
         spaceBetween: 10,
         centeredSlides: true,
         slidesPerView: 'auto',
         touchRatio: 0.2,
-        slideToClickedSlide: true
+        slideToClickedSlide: true,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true
     });
-    galleryTop.params.control = galleryThumbs;
-    galleryThumbs.params.control = galleryTop;
+    galleryTop2x4.params.control = galleryThumbs2x4;
+    galleryThumbs2x4.params.control = galleryTop2x4;
 </script>
-

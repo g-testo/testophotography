@@ -1,1 +1,66 @@
-<h1>Home Page</h1>
+<div class="home">
+    <div class="home_wrapper">
+        <img ng-src="images/logo_tp.jpg">
+    </div>
+</div>
+
+<div class="swiper-container gallery-top_home">
+    <div class="swiper-wrapper top_wrapper">
+        <div class="swiper-slide"> <img ng-src="images/home/bridge_trees.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/carstreaks.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/cityscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/clouds_cityscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/emptytraintracks.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/groundzero.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/manhendge.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/park.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/streetscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/sunset.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/sunsetscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/taxi.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/trains.jpg" class="swiper-lazy"></div>
+        
+    </div>
+    
+    <div class="swiper-button-next swiper-button-black"></div>
+    <div class="swiper-button-prev swiper-button-black"></div>
+</div>
+
+<div class="swiper-container gallery-thumbs_home">
+    <div class="swiper-wrapper thumb_wrapper">
+        <div class="swiper-slide"> <img ng-src="images/home/bridge_trees.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/carstreaks.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/cityscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/clouds_cityscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/emptytraintracks.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/groundzero.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/manhendge.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/park.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/streetscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/sunset.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/sunsetscape.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/taxi.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/home/trains.jpg" class="swiper-lazy"></div>
+    </div
+</div>
+            
+<script>
+    var galleryTop_home = new Swiper('.gallery-top_home', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 10,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true
+    });
+    var galleryThumbs_home = new Swiper('.gallery-thumbs_home', {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true
+    });
+    galleryTop_home.params.control = galleryThumbs_home;
+    galleryThumbs_home.params.control = galleryTop_home;
+</script>

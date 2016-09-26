@@ -1,3 +1,39 @@
-artwork_custom
-<img ng-src="images/custom/boat_bridges.jpg" alt="Description" />
-<img ng-src="images/custom/empire.jpg" alt="Description" />
+<span class="artwork_title">Custom Canvas</span>
+
+
+<div class="swiper-container gallery-top_custom">
+    <div class="swiper-wrapper top_wrapper">
+        <div class="swiper-slide"> <img ng-src="images/custom/boat_bridges.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/custom/empire.jpg" class="swiper-lazy"></div>
+    </div>
+    
+    <div class="swiper-button-next swiper-button-black"></div>
+    <div class="swiper-button-prev swiper-button-black"></div>
+</div>
+
+<div class="swiper-container gallery-thumbs_custom">
+    <div class="swiper-wrapper thumb_wrapper">
+        <div class="swiper-slide"> <img ng-src="images/custom/boat_bridges.jpg" class="swiper-lazy"></div>
+        <div class="swiper-slide"> <img ng-src="images/custom/empire.jpg" class="swiper-lazy"></div>
+    </div
+</div>
+<script>
+    var galleryTop_custom = new Swiper('.gallery-top_custom', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 10,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true
+    });
+    var galleryThumbs_custom = new Swiper('.gallery-thumbs_custom', {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true
+    });
+    galleryTop_custom.params.control = galleryThumbs_custom;
+    galleryThumbs_custom.params.control = galleryTop_custom;
+</script>

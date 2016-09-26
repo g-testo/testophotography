@@ -1,49 +1,96 @@
 "use strict";
-var app = angular.module("app", ['ngRoute', 'ngMaterial', 'ngAnimate']);
+var app = angular.module("app", ['ngRoute', 'ngMaterial']);
 
 app.config(function($routeProvider, $locationProvider) {
-    $routeProvider
-
-        .when('/', {
+        $routeProvider.when('/', {
             templateUrl: "pages/home.html",
-        })
-        .when('/artwork', {
+        }).when('/artwork', {
             templateUrl: "pages/artwork_home.html",
-        })
-        .when('/2x4', {
+        }).when('/2x4', {
             templateUrl: "pages/artwork/artwork_2x4.html",
-        })
-        .when('/2x6', {
+            controller: 'MainCtrl',
+        }).when('/2x6', {
             templateUrl: "pages/artwork/artwork_2x6.html",
-        })
-        .when('/custom', {
+            controller: 'MainCtrl',
+        }).when('/custom', {
             templateUrl: "pages/artwork/artwork_custom.html",
-        })
-        .when('/about', {
+            controller: 'MainCtrl',
+        }).when('/about', {
             templateUrl: "pages/about_us.html",
-        })
-        .otherwise({
+        }).otherwise({
             redirectTo: '/'
         });
+        // use the HTML5 History API for removing the # in angular
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
+    }
 
-    // use the HTML5 History API for removing the # in angular
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
-});
-
+);
 //Back button only shows when on certain pages
-app.run(function($rootScope, $location) {
-  $rootScope.$on('$routeChangeSuccess', function() {
-      $rootScope.backRoute = ['/2x4', '/2x6', '/custom'].indexOf($location.path()) > -1;
-  });
+// app.run(function($rootScope, $location) {
+//         $rootScope.$on('$routeChangeSuccess', function() {
+//             $rootScope.backRoute = ['/2x4', '/2x6', '/custom'].indexOf($location.path()) > -1;
+//         });
+//     }
+// );
+
+
+app.controller('MainCtrl', function($scope) {
 });
+
 
 
 app.controller('sideNavController', sideNavController);
 
 function sideNavController($scope, $mdSidenav) {
+    $scope.showChilds = function(index) {
+
+        $scope.items[index].active = !$scope.items[index].active;
+        collapseAnother(index);
+    };
+
+    var collapseAnother = function(index) {
+        for (var i = 0; i < $scope.items.length; i++) {
+            if (i != index) {
+                $scope.items[i].active = false;
+            }
+        }
+    };
+    $scope.items = [{
+            name: "Home",
+            route: "/",
+            close: true
+        }, {
+            name: "Artwork",
+            route: "#",
+            close: false,
+            subItems: [{
+                name: "Canvas 2x4",
+                route: "2x4"
+            }, {
+                name: "Canvas 2x6",
+                route: "2x6"
+            }, {
+                name: "Custom Canvas",
+                route: "custom"
+            }]
+        },
+        // {
+        //     name: "About Us",
+        //     route: "#",
+        //     close: false,
+        //     subItems: [{
+        //         name: "History"
+        //     }, {
+        //         name: "Quality"
+        //     }, {
+        //         name: "Contact Us"
+        //     }]
+        // }
+    ];
+
     $scope.openLeftMenu = function() {
         $mdSidenav('left').toggle();
     };
@@ -51,22 +98,3 @@ function sideNavController($scope, $mdSidenav) {
         $mdSidenav('left').close();
     };
 }
-
-// app.controller('MainCtrl', function($scope) {
-//         $scope.photos = [{
-//             image: 'images/2x4/bridge_boat.jpg',
-//             description: 'Image 00'
-//         }, {
-//             image: 'images/2x4/glow_nyc.jpg',
-//             description: 'Image 01'
-//         }, {
-//             image: 'images/2x4/hellgate_bridge.jpg',
-//             description: 'Image 02'
-//         }, {
-//             image: 'images/2x4/nyc_cityscape.jpg',
-//             description: 'Image 03'
-//         }, {
-//             image: 'images/2x4/nyc_night.jpg',
-//             description: 'Image 04'
-//         }];
-//     });
