@@ -1,14 +1,15 @@
-.swiper-slide {
-	background-size:cover;
-	background-position:center
-		
-}
 .artwork_title {
 	font-family:cursive;
 	display:block;
 	text-align:center;
 	margin:auto;
-	padding: 60px;
-	font-size:4em;
+	padding: 30px;
+	font-size:3em;
 	cursor:default
+}
+
+.swiper-slide {
+	background-size:cover;
+	background-position:center
+		
 }
