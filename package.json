@@ -39,5 +39,9 @@
   ],
   "engines": {
     "node": "4.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0"
   }
 }

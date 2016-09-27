@@ -53,6 +53,7 @@ function sideNavController($scope, $mdSidenav) {
     $scope.items = [{
             name: "Home",
             route: "/",
+            swiper_adjust:"_home",
             close: true
         }, {
             name: "Artwork",
