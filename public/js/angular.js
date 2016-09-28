@@ -1,11 +1,9 @@
 "use strict";
-var app = angular.module("app", ['ngRoute', 'ngMaterial']);
+var app = angular.module("app", ['ngRoute', 'ngMaterial','ngAnimate']);
 
 app.config(function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
             templateUrl: "pages/home.html",
-        }).when('/artwork', {
-            templateUrl: "pages/artwork_home.html",
         }).when('/2x4', {
             templateUrl: "pages/artwork/artwork_2x4.html",
             controller: 'MainCtrl',
@@ -16,7 +14,9 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: "pages/artwork/artwork_custom.html",
             controller: 'MainCtrl',
         }).when('/about', {
-            templateUrl: "pages/about_us.html",
+            templateUrl: "pages/about.html",
+        }).when('/album', {
+            templateUrl: "pages/album.html",
         }).otherwise({
             redirectTo: '/'
         });
@@ -52,36 +52,36 @@ function sideNavController($scope, $mdSidenav) {
     };
     $scope.items = [{
             name: "Home",
+            icon: "images/home_icon.png",
             route: "/",
             swiper_adjust:"_home",
             close: true
         }, {
-            name: "Artwork",
+            name: "album",
+            icon: "images/album_icon.png",
+            route: "album",
+            close: true
+        }, {
+            name: "Prints",
+            icon: "images/print_icon.png",
             route: "#",
             close: false,
             subItems: [{
-                name: "Canvas 2x4",
+                name: "2x4",
                 route: "2x4"
             }, {
-                name: "Canvas 2x6",
+                name: "2x6",
                 route: "2x6"
             }, {
-                name: "Custom Canvas",
+                name: "Custom",
                 route: "custom"
             }]
-        },
-        // {
-        //     name: "About Us",
-        //     route: "#",
-        //     close: false,
-        //     subItems: [{
-        //         name: "History"
-        //     }, {
-        //         name: "Quality"
-        //     }, {
-        //         name: "Contact Us"
-        //     }]
-        // }
+        }, {
+            name: "About Us",
+            icon: "images/contact_icon.png",
+            route: "about",
+            close: true
+        }
     ];
 
     $scope.openLeftMenu = function() {
