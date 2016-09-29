@@ -1,0 +1,16 @@
+.nyc_logo {
+	text-align:center;
+	background:url(../images/bg_cycle/bg1.jpg) no-repeat center center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	padding-bottom:500px
+}
+.nyc_logo img {
+	width:50%;
+	min-width:300px;
+	max-width:700px;
+	background:rgba(255,255,255,0.4);
+	border-radius:50px
+}

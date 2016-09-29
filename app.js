@@ -8,6 +8,22 @@ var bodyParser = require('body-parser');
 // var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var app = express();
+var nodemailer = require("nodemailer");
+var transporter = nodemailer.createTransport();
+
+exports.sendMail = function(req, res) {
+ 
+    var data = req.body;
+ 
+    transporter.sendMail({
+        from: data.contactEmail,
+        to: 'jane@email.com',
+        subject: 'Message from ' + data.contactName,
+        text: data.contactMsg
+    });
+ 
+    res.json(data);
+};
 
 
 app.use(sassMiddleware({

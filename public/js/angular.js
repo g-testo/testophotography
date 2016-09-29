@@ -1,5 +1,6 @@
 "use strict";
-var app = angular.module("app", ['ngRoute', 'ngMaterial','ngAnimate']);
+var app = angular.module("app", ['ngRoute', 'ngMaterial','ngAnimate'])
+
 
 app.config(function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
@@ -13,8 +14,8 @@ app.config(function($routeProvider, $locationProvider) {
         }).when('/custom', {
             templateUrl: "pages/artwork/artwork_custom.html",
             controller: 'MainCtrl',
-        }).when('/about', {
-            templateUrl: "pages/about.html",
+        }).when('/contact', {
+            templateUrl: "pages/contact.html",
         }).when('/album', {
             templateUrl: "pages/album.html",
         }).otherwise({
@@ -31,8 +32,6 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.controller('MainCtrl', function($scope) {
 });
-
-
 
 app.controller('sideNavController', sideNavController);
 
@@ -52,18 +51,18 @@ function sideNavController($scope, $mdSidenav) {
     };
     $scope.items = [{
             name: "Home",
-            icon: "images/home_icon.png",
+            icon: "images/icons_logo/home_icon.png",
             route: "/",
             swiper_adjust:"_home",
             close: true
         }, {
             name: "album",
-            icon: "images/album_icon.png",
+            icon: "images/icons_logo/album_icon.png",
             route: "album",
             close: true
         }, {
             name: "Prints",
-            icon: "images/print_icon.png",
+            icon: "images/icons_logo/print_icon.png",
             route: "#",
             close: false,
             subItems: [{
@@ -78,8 +77,8 @@ function sideNavController($scope, $mdSidenav) {
             }]
         }, {
             name: "About Us",
-            icon: "images/contact_icon.png",
-            route: "about",
+            icon: "images/icons_logo/contact_icon.png",
+            route: "contact",
             close: true
         }
     ];

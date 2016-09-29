@@ -1,60 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 
-  <head>
-    <meta charset="utf-8">
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="/stylesheets/swiper.min.css">
-    <script type='text/javascript' src="/js/swiper.min.js"></script>
-    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <link rel="stylesheet" , href="/stylesheets/nav_bar.css" />
-    <link rel="stylesheet" , href="/stylesheets/home.css" />
-    <link rel="stylesheet" , href="/stylesheets/artwork.css" />
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  </head>
-  
-  <div id="sideNavContainer" ng-controller="sideNavController as ctrl" layout="row" ng-cloak>
-    
-    <md-sidenav class="md-sidenav-left" md-component-id="left">
-      <md-list>
-        <li ng-repeat="item in items" ng-click="showChilds($index)">
-          <md-button class="nav_title navbar-toggle" ng-click="item.close && closeSideNavPanel()" ng-href="{{item.route}}"><img ng-src={{item.icon}}></md-button>
-          <md-list class="dropdown-menu">
-              <md-list-item ng-repeat="subItem in item.subItems" ng-show="item.active">
-                <md-button class="sub_nav_title" ng-href="{{subItem.route}}"  ng-click="closeSideNavPanel()">{{subItem.name}}</md-button>
-              </md-list-item>
-          </md-list>
-        </li>
-      </md-list>
-    </md-sidenav>
-    
-    <md-content class="md-no-momentum">
-      <div class="menu_button" ng-click="openLeftMenu()"><img ng-src="images/menu_icon.png"></div>
-    </md-content>
-  </div>
-  
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/stylesheets/swiper.min.css">
+  <script type='text/javascript' src="/js/swiper.min.js"></script>
+  <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <link rel="stylesheet" , href="/stylesheets/nav_bar.css" />
+  <link rel="stylesheet" , href="/stylesheets/home.css" />
+  <link rel="stylesheet" , href="/stylesheets/footer.css" />
+  <link rel="stylesheet" , href="/stylesheets/artwork.css" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
 
-  <div class="logo">
-    <div class="logo_wrapper">
-      <img class="logo_short" ng-src="images/tp_logo_short.png">
-      <img class="logo_long" ng-src="images/tp_logo_long.png">
-    </div>
+
+
+<div id="sideNavContainer" ng-controller="sideNavController as ctrl" layout="row" ng-cloak>
+
+  <md-sidenav class="md-sidenav-left md-no-momentum" md-component-id="left">
+    <md-list>
+      <li ng-repeat="item in items" ng-click="showChilds($index)">
+        <md-button class="nav_title navbar-toggle" ng-click="item.close && closeSideNavPanel()" ng-href="{{item.route}}"><img ng-src={{item.icon}}></md-button>
+        <md-list class="dropdown-menu">
+          <md-list-item ng-animate="'animate'" ng-repeat="subItem in item.subItems" ng-show="item.active">
+            <md-button class="sub_nav_title" ng-href="{{subItem.route}}" ng-click="closeSideNavPanel()">{{subItem.name}}</md-button>
+          </md-list-item>
+        </md-list>
+      </li>
+    </md-list>
+  </md-sidenav>
+
+
+
+  <md-content class="md-no-momentum">
+    <div class="menu_button" ng-click="openLeftMenu()"><img ng-src="images/icons_logo/menu_icon.png"></div>
+  </md-content>
+</div>
+
+
+<div class="logo">
+  <div class="logo_wrapper">
+    <img class="logo_short" ng-src="images/icons_logo/tp_logo_short.png">
+    <img class="logo_long" ng-src="images/icons_logo/tp_logo_long.png">
+  </div>
+</div>
+
+<div>
+  <ng-view></ng-view>
+</div>
+
+<div class="footer">
+
+  <div class="facebook">
+    <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Ftestophotography&width=100&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="100" height="80" style="border:none;overflow:hidden"
+      scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    <img ng-src="images/icons_logo/fb_icon.png">
   </div>
 
-  <div>
-    <ng-view></ng-view>
-  </div>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-  <script type='text/javascript' src='/js/angular.js'></script>
-  
-  </body>
+  <div class="copyright">©2005-2016 All Rights Reserved </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script type='text/javascript' src='/js/angular.js'></script>
+</body>
+
 </html>
