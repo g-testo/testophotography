@@ -17,7 +17,6 @@
 </head>
 
 
-
 <div id="sideNavContainer" ng-controller="sideNavController as ctrl" layout="row" ng-cloak>
 
   <md-sidenav class="md-sidenav-left md-no-momentum" md-component-id="left">
@@ -25,16 +24,14 @@
       <li ng-repeat="item in items" ng-click="showChilds($index)">
         <md-button class="nav_title navbar-toggle" ng-click="item.close && closeSideNavPanel()" ng-href="{{item.route}}"><img ng-src={{item.icon}}></md-button>
         <md-list class="dropdown-menu">
-          <md-list-item ng-animate="'animate'" ng-repeat="subItem in item.subItems" ng-show="item.active">
-            <md-button class="sub_nav_title" ng-href="{{subItem.route}}" ng-click="closeSideNavPanel()">{{subItem.name}}</md-button>
+          <md-list-item ng-repeat="subItem in item.subItems" ng-show="item.active" class="fadein fadeout">
+            <md-button class="sub_nav_title" ng-href="{{subItem.route}}" ng-click="closeSideNavPanel()"><img ng-src={{subItem.icon}}></md-button>
           </md-list-item>
         </md-list>
       </li>
     </md-list>
   </md-sidenav>
-
-
-
+  
   <md-content class="md-no-momentum">
     <div class="menu_button" ng-click="openLeftMenu()"><img ng-src="images/icons_logo/menu_icon.png"></div>
   </md-content>
@@ -48,16 +45,18 @@
   </div>
 </div>
 
+
 <div>
   <ng-view></ng-view>
 </div>
 
 <div class="footer">
-
+  <a ng-href="https://www.facebook.com/TestoPhotography"><img ng-src="images/icons_logo/fb_footer_icon.png"></a>
+  <a ng-href="https://www.linkedin.com/in/gregorytesto"><img ng-src="images/icons_logo/in_footer_icon.png"></a>
+  <a ng-href="mailto:gtesto@testophotography.com?Subject=Website%20Inquiry" target="_top"><img ng-src="images/icons_logo/mail_footer_icon.png"></a>
   <div class="facebook">
     <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Ftestophotography&width=100&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="100" height="80" style="border:none;overflow:hidden"
       scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-    <img ng-src="images/icons_logo/fb_icon.png">
   </div>
 
   <div class="copyright">©2005-2016 All Rights Reserved </div>

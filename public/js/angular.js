@@ -67,12 +67,15 @@ function sideNavController($scope, $mdSidenav) {
             close: false,
             subItems: [{
                 name: "2x4",
+                icon: "images/icons_logo/8_panel_icon.png",
                 route: "2x4"
             }, {
                 name: "2x6",
+                icon: "images/icons_logo/12_panel_icon.png",
                 route: "2x6"
             }, {
                 name: "Custom",
+                icon: "images/icons_logo/custom_panel_icon.png",
                 route: "custom"
             }]
         }, {
