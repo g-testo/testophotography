@@ -1,11 +1,11 @@
-var galleryTop_home = new Swiper('.gallery-top_home', {
+var galleryTop_album = new Swiper('.gallery-top_album', {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
     spaceBetween: 10,
     lazyLoading: true,
     lazyLoadingInPrevNext: true
 });
-var galleryThumbs_home = new Swiper('.gallery-thumbs_home', {
+var galleryThumbs_album = new Swiper('.gallery-thumbs_album', {
     spaceBetween: 10,
     centeredSlides: true,
     slidesPerView: 'auto',
@@ -14,8 +14,8 @@ var galleryThumbs_home = new Swiper('.gallery-thumbs_home', {
     lazyLoading: true,
     lazyLoadingInPrevNext: true
 });
-galleryTop_home.params.control = galleryThumbs_home;
-galleryThumbs_home.params.control = galleryTop_home;
+galleryTop_album.params.control = galleryThumbs_album;
+galleryThumbs_album.params.control = galleryTop_album;
 
 
 var galleryTop_custom = new Swiper('.gallery-top_custom', {
@@ -76,3 +76,11 @@ var galleryThumbs2x6 = new Swiper('.gallery-thumbs2x6', {
 });
 galleryTop2x6.params.control = galleryThumbs2x6;
 galleryThumbs2x6.params.control = galleryTop2x6;
+
+var galleryTop_home = new Swiper('.gallery-top_home', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: 5000,
+    autoplayDisableOnInteraction: false,
+    noSwipingClass: 'swiper-no-swiping'
+});
