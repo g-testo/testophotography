@@ -13,12 +13,22 @@
     <link rel="stylesheet" , href="/stylesheets/footer.css" />
     <link rel="stylesheet" , href="/stylesheets/artwork.css" />
     <link rel="stylesheet" , href="/stylesheets/contact.css" />
+    <link rel="stylesheet" , href="/stylesheets/side_nav.css" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
 
-    <div id="sideNavContainer" ng-controller="sideNavController as ctrl" layout="row" ng-cloak>
+    <div id="navContainer" ng-controller="NavController as ctrl" layout="row" ng-cloak>
+      <div ng-repeat="item in items" ng-click="showChilds($index)">
+        <md-button class="nav_title navbar-toggle" ng-href="{{item.route}}"><img ng-src={{item.icon}}></md-button>
+          <md-list-item ng-repeat="subItem in item.subItems" ng-show="item.active" class="">
+            <md-button class="sub_nav_title" ng-href="{{subItem.route}}"><img ng-src={{subItem.icon}}></md-button>
+          </md-list-item>
+      </div>
+    </div>
+
+    <div id="sideNavContainer" ng-controller="NavController as ctrl" layout="row" ng-cloak>
       <md-sidenav class="md-sidenav-left md-no-momentum" md-component-id="left">
         <md-list>
           <li ng-repeat="item in items" ng-click="showChilds($index)">
@@ -57,7 +67,12 @@
         <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=98&layout=button&action=like&size=small&show_faces=false&share=true&height=65&appId" width="98" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
       </div>
 
-      <div class="copyright">©2005-2016 All Rights Reserved </div>
+      <div class="copyright">©2005-<span id="year"></span> All Rights Reserved </div>
+
+      <script>
+        var d = new Date()
+        document.getElementById("year").innerHTML = d.getFullYear();
+      </script>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>

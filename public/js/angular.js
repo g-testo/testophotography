@@ -33,7 +33,7 @@ app.config(function($routeProvider, $locationProvider) {
 app.controller('MainCtrl', function($scope) {
 });
 
-app.controller('sideNavController', sideNavController);
+app.controller('NavController', sideNavController);
 
 app.controller('contactController', function($scope, $http) {
     $scope.submit = function(){
