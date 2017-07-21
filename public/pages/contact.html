@@ -1,27 +1,52 @@
-<!--<div flex layout="row" layout-align="center center">-->
-<!--    <div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z2">-->
-<!--        <md-content class="md-padding">-->
-<!--            <div flex-sm="100" flex-gt-sm="80" layout-sm="column">-->
-<!--                <form name="contactForm" data-ng-submit="sendMail()">-->
-<!--                    <md-input-container>-->
-<!--                        <label>Name:</label>-->
-<!--                        <input ng-model="contactName" required>-->
-<!--                    </md-input-container>-->
-<!--                    <md-input-container flex>-->
-<!--                        <label>Email:</label>-->
-<!--                        <input type="email" ng-model="contactEmail" required>-->
-<!--                    </md-input-container>-->
+<div class="page_titles">{{title}}</div>
 
-<!--                    <md-input-container>-->
-<!--                        <label>Message:</label>-->
-<!--                        <textarea ng-model="contactMsg" columns="1" md-maxlength="150" required></textarea>-->
-<!--                    </md-input-container>-->
+<div class="contactContainer">
+    <div calss="contactWrapper">
+        <div class="form-area">
+            <form>
+            <br style="clear:both">
+              <h3>Contact Form</h3>
+        				<div>
+    						<input type="text" id="name" ng-model="name" placeholder="Name (Required)" required>
+    					</div>
+    					<div>
+    						<input type="email" id="email" ng-model="email" placeholder="Email (Required)" required>
+    					</div>
+    					<div>
+    						<input type="text" id="mobile" ng-model="mobile" placeholder="Mobile Number">
+    					</div>
+    					<div>
+    						<input type="text" id="subject" ng-model="subject" placeholder="Subject">
+    					</div>
+              <div>
+              <input type="text" id="message" ng-model="message" placeholder="Message (Required)" maxlength="140"></input>
+                <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+              </div>
 
-<!--                    <md-button type="submit" class="md-primary"-->
-<!--                               ng-class="{'md-raised md-hue-1': (contactForm.$dirty && contactForm.$valid) }"-->
-<!--                               aria-label="Save Project">Send</md-button>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </md-content>-->
-<!--    </div>-->
-<!--</div>-->
+            <button value="Login" ng-click="submit()" type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+    $('#characterLeft').text('140 characters left');
+    $('#message').keydown(function () {
+        var max = 140;
+        var len = $(this).val().length;
+        if (len >= max) {
+            $('#characterLeft').text('You have reached the limit');
+            $('#characterLeft').addClass('red');
+            $('#btnSubmit').addClass('disabled');
+        }
+        else {
+            var ch = max - len;
+            $('#characterLeft').text(ch + ' characters left');
+            $('#btnSubmit').removeClass('disabled');
+            $('#characterLeft').removeClass('red');
+        }
+    });
+});
+
+</script>

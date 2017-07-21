@@ -16,6 +16,7 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'MainCtrl',
         }).when('/contact', {
             templateUrl: "pages/contact.html",
+            controller: 'contactController'
         }).when('/album', {
             templateUrl: "pages/album.html",
         }).otherwise({
@@ -27,13 +28,29 @@ app.config(function($routeProvider, $locationProvider) {
             requireBase: false
         });
     }
-
 );
 
 app.controller('MainCtrl', function($scope) {
 });
 
 app.controller('sideNavController', sideNavController);
+
+app.controller('contactController', function($scope, $http) {
+    $scope.submit = function(){
+       var data = {
+           name: $scope.name,
+           email: $scope.email,
+           mobile: $scope.mobile,
+           subject: $scope.subject,
+           message: $scope.message
+       };
+    $http.post('/contact/', data).success(function(response) {
+        console.log("Success");
+    }, function(response) {
+        console.log("Contact form posting failure");
+    });
+   };
+});
 
 function sideNavController($scope, $mdSidenav) {
     $scope.showChilds = function(index) {

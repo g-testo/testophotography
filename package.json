@@ -1,23 +1,21 @@
 {
   "name": "testophotography",
   "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
-    "ejs": "^2.5.2",
-    "express": "^4.13.4",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
     "jquery": "^3.1.0",
     "morgan": "^1.7.0",
     "node-sass": "^3.10.0",
-    "node-sass-middleware": "^0.9.8",
+    "node-sass-middleware": "^0.10.0",
+    "nodemailer": "^2.7.0",
+    "nodemailer-mailgun-transport": "^1.2.3",
     "nodemailer": "^2.6.4"
   },
-  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/g-testo/testophotography.git"
@@ -27,7 +25,6 @@
   "bugs": {
     "url": "https://github.com/g-testo/testophotography/issues"
   },
-  "homepage": "https://github.com/g-testo/testophotography#readme",
   "description": "Photography website made using MEAN stack",
   "keywords": [
     "photography",
