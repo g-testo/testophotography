@@ -42,9 +42,11 @@
 	}
 }
 .fadein,.fadeout {
-	transition:.25s linear all;
+	transition:.15s linear all;
 	opacity: 1;
 	bottom: 0;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 10px;
 }
 .fadein.ng-hide-remove,.fadeout.ng-hide-add.ng-hide-add-active {
 	opacity: 0;
@@ -56,41 +58,9 @@
 }
 
 .dropdown-menu{
-	background-color: rgba(0,0,0,0.5);
 	position: absolute;
 	z-index: 999999;
-	border-radius: 10px;
-	transition: visibility .5s;
 }
 .dropdown-menu .md-list-item{
 	position: relative;
-}
-
-.onclick-menu {
-    position: relative;
-    display: inline-block;
-}
-.onclick-menu:before {
-    content: "click me!";
-}
-.onclick-menu:focus {
-    /* clicking on label should toggle the menu */
-    pointer-events: none;
-}
-.onclick-menu:focus .onclick-menu-content {
-    /*  opacity is 1 in opened state (see below) */
-    opacity: 1;
-    visibility: visible;
-
-    /* don't let pointer-events affect descendant elements */
-    pointer-events: auto;
-}
-.onclick-menu-content {
-    position: absolute;
-    z-index: 1;
-
-    /* use opacity to fake immediate toggle */
-    opacity: 0;
-    visibility: hidden;
-    transition: visibility 0.5s;
 }

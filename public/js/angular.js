@@ -54,7 +54,6 @@ app.controller('contactController', function($scope, $http) {
 
 function sideNavController($scope, $mdSidenav) {
     $scope.showChilds = function(index) {
-
         $scope.items[index].active = !$scope.items[index].active;
         collapseAnother(index);
     };
