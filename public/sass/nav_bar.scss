@@ -1,17 +1,17 @@
 #navContainer{
-	margin:auto 0;
+	width: 400px;
+	margin: 20px auto;
 }
 #navContainer img{
-	width:100px;
+	width: 50px;
+	outline:none;
 }
-
-
 #main {
 	transition:margin-left .5s;
 }
 .logo{
     text-align: center;
-    margin:auto;
+    margin: auto;
     padding-top:10px;
     img{
     	width: 80%;
@@ -19,37 +19,38 @@
 }
 @media screen and (max-width: 550px) {
 	.logo_long {
-		display:none;
+		display: none;
 	}
 	.logo_short {
 		display:inline;
-		max-width:150px;
-		min-width:100px
+		max-width: 150px;
+		min-width: 100px
 	}
 	#navContainer{
-		display: inline;
+		position: static;
+		display: block;
 	}
 }
 @media screen and (min-width: 550px) {
 	.logo_short {
-		display:none;
+		display: none;
 	}
 	.logo_long {
-		display:inline;
+		display: inline;
 		min-width: 250px;
 		max-width: 350px;
 	}
 }
 .fadein,.fadeout {
 	transition:.25s linear all;
-	opacity:1;
+	opacity: 1;
 	bottom: 0;
 }
 .fadein.ng-hide-remove,.fadeout.ng-hide-add.ng-hide-add-active {
-	opacity:0;
+	opacity: 0;
 	bottom: 50px;
 }
 .fadeout.ng-hide-add,.fadein.ng-hide-remove.ng-hide-remove-active {
-	opacity:1;
+	opacity: 1;
 	bottom: 0;
 }

@@ -18,12 +18,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
-
     <div id="navContainer" ng-controller="NavController as ctrl" layout="row" ng-cloak>
       <div ng-repeat="item in items" ng-click="showChilds($index)">
-        <md-button class="nav_title navbar-toggle" ng-href="{{item.route}}"><img ng-src={{item.icon}}></md-button>
-          <md-list-item ng-repeat="subItem in item.subItems" ng-show="item.active" class="">
-            <md-button class="sub_nav_title" ng-href="{{subItem.route}}"><img ng-src={{subItem.icon}}></md-button>
+        <md-button class="nav_title navbar-toggle md-raised" ng-href="{{item.route}}"><img ng-src={{item.icon}}></md-button>
+          <md-list-item ng-repeat="subItem in item.subItems" ng-show="item.active" class="sub_nav_title_list fadein fadeout">
+            <md-button class="sub_nav_title md-raised" ng-href="{{subItem.route}}"><img ng-src={{subItem.icon}}></md-button>
           </md-list-item>
       </div>
     </div>
