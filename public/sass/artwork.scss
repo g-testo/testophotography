@@ -3,7 +3,7 @@
 	display:block;
 	text-align:center;
 	margin:auto;
-	padding: 20px 0 40px 0;
+	padding: 10px 0 20px 0;
 	font-size:3em;
 	cursor:default
 }
@@ -11,7 +11,7 @@
 .swiper-slide {
 	background-size:cover;
 	background-position:center
-		
+
 }
 
 .gallery-top2x4 img, .gallery-top_custom img, .gallery-top2x6 img,.gallery-top_album img {
@@ -19,9 +19,9 @@
 	text-align:center;
 	display:block;
 	margin:auto;
-	max-width: 900px;
+	max-width: 600px;
 	min-width: 400px;
-	user-drag: none; 
+	user-drag: none;
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-drag: none;
@@ -30,7 +30,7 @@
 }
 .gallery-thumbs2x4 img, .gallery-thumbs_custom img, .gallery-thumbs2x6 img,.gallery-thumbs_album img {
 	box-sizing:border-box;
-	width:100%;
+	width:70%;
 	height:auto;
 	margin:auto;
 	max-width: 250px;

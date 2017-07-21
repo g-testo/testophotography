@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
+
     <div id="sideNavContainer" ng-controller="sideNavController as ctrl" layout="row" ng-cloak>
-    
       <md-sidenav class="md-sidenav-left md-no-momentum" md-component-id="left">
         <md-list>
           <li ng-repeat="item in items" ng-click="showChilds($index)">
@@ -30,25 +30,24 @@
           </li>
         </md-list>
       </md-sidenav>
-      
+
       <md-content class="md-no-momentum">
         <div class="menu_button" ng-click="openLeftMenu()"><img ng-src="images/icons_logo/menu_icon.png" ondragstart="return false;"></div>
       </md-content>
     </div>
-    
-    
+
     <div class="logo">
       <div class="logo_wrapper">
         <img class="logo_short" ng-src="images/icons_logo/tp_logo_short.png"ondragstart="return false;">
         <img class="logo_long" ng-src="images/icons_logo/tp_logo_long.png"ondragstart="return false;">
       </div>
     </div>
-    
-    
+
+
     <div>
       <ng-view></ng-view>
     </div>
-    
+
     <div class="footer">
       <a ng-href="https://www.facebook.com/TestoPhotography"><img ng-src="images/icons_logo/fb_footer_icon.png"></a>
       <a ng-href="https://www.linkedin.com/in/gregorytesto"><img ng-src="images/icons_logo/in_footer_icon.png"></a>
@@ -56,7 +55,7 @@
       <div class="facebook">
         <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=98&layout=button&action=like&size=small&show_faces=false&share=true&height=65&appId" width="98" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
       </div>
-    
+
       <div class="copyright">©2005-2016 All Rights Reserved </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
