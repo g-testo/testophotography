@@ -17,13 +17,16 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
+
   <body>
     <div id="navContainer" ng-controller="NavController as ctrl" layout="row" ng-cloak>
       <div ng-repeat="item in items" ng-click="showChilds($index)">
         <md-button class="nav_title navbar-toggle md-raised" ng-href="{{item.route}}"><img ng-src={{item.icon}}></md-button>
-          <md-list-item ng-repeat="subItem in item.subItems" ng-show="item.active" class="sub_nav_title_list fadein fadeout">
-            <md-button class="sub_nav_title md-raised" ng-href="{{subItem.route}}"><img ng-src={{subItem.icon}}></md-button>
+        <md-list class="dropdown-menu">
+          <md-list-item class="sub_nav_title_list fadein fadeout" ng-repeat="subItem in item.subItems" ng-show="item.active">
+            <md-button class="sub_nav_item md-raised" ng-href="{{subItem.route}}"><img ng-src={{subItem.icon}}></md-button>
           </md-list-item>
+        </md-list>
       </div>
     </div>
 
