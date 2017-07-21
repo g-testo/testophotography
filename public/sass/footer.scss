@@ -1,15 +1,15 @@
 .footer {
 	width:100%;
 	text-align:center;
-	padding-top:50px
+	padding-top:10px
 }
 .facebook {
 	width:18%;
-	margin:auto;
+	margin:0 auto;
 	min-width:100px
 }
 .facebook iframe {
-	padding-top:10px
+	padding-top:5px
 }
 .footer img {
 	width:50px
@@ -21,9 +21,11 @@
 	cursor: pointer;
 }
 .copyright {
+	font-size: .8em;
 	clear:both;
 	display:float;
 	text-align:center;
 	min-width:100px;
 	cursor:default;
+	padding-top: 10px;
 }

@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 
 app.post('/contact', function(req, res) {
+  if (req.body.email && req.body.message){
     nodemailerMailgun.sendMail({
       from: 'website@testophotography.com',
       to: 'cryptomonger@hotmail.com', // An array if you have multiple recipients.
@@ -35,7 +36,6 @@ app.post('/contact', function(req, res) {
       html: "From: " +  req.body.name + "<br><br>Email: " + req.body.email + "<br><br>Phone: " + req.body.mobile + "<br><br>Message: <br><br>" + req.body.message
       // //You can use "text:" to send plain-text content.
       // text:
-
     }, function (err, info) {
       if (err) {
         console.log('Error: ' + err);
@@ -44,6 +44,8 @@ app.post('/contact', function(req, res) {
         console.log('Response: ' + info);
       }
     });
+  }
+
 });
 
 app.use(sassMiddleware({

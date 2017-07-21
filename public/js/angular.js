@@ -50,6 +50,15 @@ app.controller('contactController', function($scope, $http) {
         console.log("Contact form posting failure");
     });
    };
+   $scope.showAddFields = function () {
+     console.log("Testing!!!!!!!!!!!!!!!!!!");
+     var x = document.getElementById('contactAddFields');
+         if (x.style.display === 'none') {
+             x.style.display = 'inline';
+         } else {
+             x.style.display = 'none';
+         }
+    };
 });
 
 function sideNavController($scope, $mdSidenav) {

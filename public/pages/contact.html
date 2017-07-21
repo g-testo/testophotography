@@ -5,25 +5,29 @@
         <div class="form-area">
             <form>
             <br style="clear:both">
-              <h3>Contact Form</h3>
-        				<div>
-    						<input type="text" id="name" ng-model="name" placeholder="Name (Required)" required>
-    					</div>
+              <h2 id="formTitle">Contact Form</h2>
     					<div>
     						<input type="email" id="email" ng-model="email" placeholder="Email (Required)" required>
     					</div>
-    					<div>
-    						<input type="text" id="mobile" ng-model="mobile" placeholder="Mobile Number">
-    					</div>
-    					<div>
-    						<input type="text" id="subject" ng-model="subject" placeholder="Subject">
-    					</div>
               <div>
-              <input type="text" id="message" ng-model="message" placeholder="Message (Required)" maxlength="140"></input>
+                <input  cols="25" rows="3" type="text" id="message" ng-model="message" placeholder="Message (Required)" maxlength="140"></input>
                 <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
               </div>
 
-            <button value="Login" ng-click="submit()" type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit</button>
+              <md-button ng-click="showAddFields()">Show Additional Fields</md-button>
+
+              <div id="contactAddFields" style="display:none";>
+                <div>
+                  <input type="text" id="name" ng-model="name" placeholder="Name" >
+                </div>
+                <div>
+                  <input type="text" id="subject" ng-model="subject" placeholder="Subject">
+                </div>
+      					<div>
+      						<input type="text" id="mobile" ng-model="mobile" placeholder="Mobile Number">
+      					</div>
+              </div>
+            <md-button value="Login" ng-click="submit()" type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit</md-button>
             </form>
         </div>
     </div>
@@ -47,6 +51,5 @@
             $('#characterLeft').removeClass('red');
         }
     });
-});
-
+  });
 </script>
