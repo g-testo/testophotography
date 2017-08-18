@@ -51,7 +51,6 @@ app.controller('contactController', function($scope, $http) {
     });
    };
    $scope.showAddFields = function () {
-     console.log("Testing!!!!!!!!!!!!!!!!!!");
      var x = document.getElementById('contactAddFields');
          if (x.style.display === 'none') {
              x.style.display = 'inline';
