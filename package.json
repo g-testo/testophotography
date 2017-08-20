@@ -8,12 +8,12 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "jquery": "^3.1.0",
+    "lightbox2": "^2.9.0",
     "morgan": "^1.7.0",
     "node-sass": "^3.10.0",
     "node-sass-middleware": "^0.10.0",
-    "nodemailer": "^2.7.0",
-    "nodemailer-mailgun-transport": "^1.2.3",
-    "nodemailer": "^2.6.4"
+    "nodemailer": "^2.6.4",
+    "nodemailer-mailgun-transport": "^1.2.3"
   },
   "repository": {
     "type": "git",

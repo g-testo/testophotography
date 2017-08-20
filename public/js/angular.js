@@ -7,18 +7,19 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: "pages/home.html",
         }).when('/2x4', {
             templateUrl: "pages/artwork/artwork_2x4.html",
-            controller: 'MainCtrl',
+            controller: 'MainCtrl'
         }).when('/2x6', {
             templateUrl: "pages/artwork/artwork_2x6.html",
-            controller: 'MainCtrl',
+            controller: 'MainCtrl'
         }).when('/custom', {
             templateUrl: "pages/artwork/artwork_custom.html",
-            controller: 'MainCtrl',
+            controller: 'MainCtrl'
         }).when('/contact', {
             templateUrl: "pages/contact.html",
             controller: 'contactController'
         }).when('/album', {
             templateUrl: "pages/album.html",
+            controller: 'albumCtrl'
         }).otherwise({
             redirectTo: '/'
         });
@@ -60,6 +61,10 @@ app.controller('contactController', function($scope, $http) {
              $('#showToggle').text("Show Additional Fields")
          }
     };
+});
+
+app.controller('albumCtrl', function($scope) {
+  $scope.photoArr = [ 'images/album/manhendge.jpg', "images/album/taxi.jpg", "images/album/bridge_trees.jpg", "images/album/carstreaks.jpg", "images/album/cityscape.jpg", "images/album/streetscape.jpg", "images/album/clouds_cityscape.jpg", "images/album/sunset.jpg", "images/album/emptytraintracks.jpg", "images/album/park.jpg", "images/album/sunsetscape.jpg", "images/album/trains.jpg" ]
 });
 
 function sideNavController($scope, $mdSidenav) {
