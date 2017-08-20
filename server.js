@@ -72,9 +72,7 @@ app.use(function(req, res) {
 
 // Command to run Server: nodemon ./server.js
 
-var port = 3000
-
-http.createServer(app).listen(port, process.env.IP);
+http.createServer(app).listen(process.env.PORT || 3000)
 
 
 // catch 404 and forward to error handler
