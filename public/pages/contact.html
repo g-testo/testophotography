@@ -6,15 +6,6 @@
             <form>
             <br style="clear:both">
               <h2 id="formTitle">Contact Form</h2>
-    					<div>
-    						<input type="email" id="email" ng-model="email" placeholder="Email (Required)" required>
-    					</div>
-              <div>
-                <input  cols="25" rows="3" type="text" id="message" ng-model="message" placeholder="Message (Required)" maxlength="140"></input>
-                <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
-              </div>
-
-              <md-button ng-click="showAddFields()">Show Additional Fields</md-button>
 
               <div id="contactAddFields" style="display:none";>
                 <div>
@@ -23,10 +14,21 @@
                 <div>
                   <input type="text" id="subject" ng-model="subject" placeholder="Subject">
                 </div>
-      					<div>
-      						<input type="text" id="mobile" ng-model="mobile" placeholder="Mobile Number">
-      					</div>
+                <div>
+                  <input type="text" id="mobile" ng-model="mobile" placeholder="Mobile Number">
+                </div>
               </div>
+
+    					<div>
+    						<input type="email" id="email" ng-model="email" placeholder="Email (Required)" required>
+    					</div>
+
+              <div>
+                <input  cols="25" rows="3" type="text" id="message" ng-model="message" placeholder="Message (Required)" maxlength="140"></input>
+                <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+              </div>
+
+              <md-button id="showToggle" ng-click="showAddFields()">Show Additional Fields</md-button>
             <md-button value="Login" ng-click="submit()" type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit</md-button>
             </form>
         </div>
@@ -34,7 +36,7 @@
 </div>
 
 <script>
-    $(document).ready(function(){
+  $(document).ready(function(){
     $('#characterLeft').text('140 characters left');
     $('#message').keydown(function () {
         var max = 140;

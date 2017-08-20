@@ -1,3 +1,4 @@
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 var express = require('express');
 var sass = require('node-sass');
 var sassMiddleware = require('node-sass-middleware');

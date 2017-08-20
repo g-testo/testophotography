@@ -54,8 +54,10 @@ app.controller('contactController', function($scope, $http) {
      var x = document.getElementById('contactAddFields');
          if (x.style.display === 'none') {
              x.style.display = 'inline';
+             $('#showToggle').text("Hide Additional Fields")
          } else {
              x.style.display = 'none';
+             $('#showToggle').text("Show Additional Fields")
          }
     };
 });
